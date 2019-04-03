@@ -1,0 +1,37 @@
+
+#!/usr/bin/python
+
+import socket
+
+
+ip = "0.0.0.0"
+porta = 9999
+
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+server.bind((ip, porta))
+
+server.listen(5)
+
+print "ouvindo em  %s:%d" % (ip, porta)
+
+
+def cliente(cliente_socket):
+
+
+    resposta = cliente.socket.recv(1024)
+
+    print "Resposta: %s" % resposta
+
+    cliente_socket.send("Salveeeeee")
+
+    cliente_socket.close()
+
+while True:
+    cliente, addr  = server.accept()
+
+    print "Conexao recebida por: %s:%d" % (addr [0], addr[1])
+
+cliente = threading.thread(target=cliente, args=(cliente,))
+
+cliente.start()
